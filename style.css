@@ -1,3 +1,23 @@
 body{
   background-color: rgb(174, 202, 226);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.jsnack{
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button{
+  font-size: 2vw;
+  padding: 25px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+h1{
+  display: block;
 }
