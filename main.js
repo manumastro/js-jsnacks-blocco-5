@@ -157,24 +157,29 @@ const jsnack2 = document.getElementById('jsnack2').addEventListener('click', fun
       lunghezza: 15
     },
   ]
-let sommaPiu15 = 0;
-let sommaMeno15 = 0;
-for(let zucchina of arrayZucchine){
-  if(zucchina.lunghezza < 15){
-    arrayZucchineMeno15.push(zucchina.lunghezza);
-    sommaMeno15 += zucchina.peso;
-  }else{
-    arrayZucchinePiu15.push(zucchina.lunghezza);
-    sommaPiu15 += zucchina.peso;
 
-  }
+for(let zucchina of arrayZucchine){
+  /* if(zucchina.lunghezza < 15){
+    arrayZucchineMeno15.push(zucchina);
+  }else{
+    arrayZucchinePiu15.push(zucchina);
+  } */
+  (zucchina.lunghezza < 15) ? arrayZucchineMeno15.push(zucchina): arrayZucchinePiu15.push(zucchina);
 }
 
-const output2 = document.getElementById('output-2');
-output2.innerHTML = 
+
+let pesoTotaleLunghe = 0, pesoTotaleCorte = 0;
+for(let zucchina of arrayZucchinePiu15){
+  pesoTotaleLunghe += zucchina.peso;
+}
+for(let zucchina of arrayZucchineMeno15){
+  pesoTotaleCorte += zucchina.peso;
+}
+
+const output2 = document.getElementById('output-2').innerHTML = 
 `
-<h1>Il peso delle zucchine che misurano meno di 15 cm è ${sommaMeno15}gr</h1>
-<h1>Il peso delle zucchine che misurano più di 15 cm è ${sommaPiu15}gr</h1>
+<h1>Il peso delle zucchine che misurano meno di 15 cm è ${pesoTotaleCorte}gr</h1>
+<h1>Il peso delle zucchine che misurano più di 15 cm è ${pesoTotaleLunghe}gr</h1>
 `
 
 })
