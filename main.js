@@ -181,5 +181,18 @@ const output2 = document.getElementById('output-2').innerHTML =
 <h1>Il peso delle zucchine che misurano meno di 15 cm è ${pesoTotaleCorte}gr</h1>
 <h1>Il peso delle zucchine che misurano più di 15 cm è ${pesoTotaleLunghe}gr</h1>
 `
-
 })
+
+
+
+
+/* 
+Jsnack 3
+Scrivi una funzione che accetti una stringa come argomento e la ritorni girata (es. Ciao -> oaiC)
+*/
+
+const word = prompt('inserisci una parola');
+
+const reverseWord = (str) => str.split('').reverse().join('');  
+
+console.log(reverseWord(word));
