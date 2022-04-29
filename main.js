@@ -78,7 +78,9 @@ for(let zucchina of arrayZucchine){
   sum += zucchina.peso;
 }
 console.log(sum);
-let output1 = document.getElementById('output-1').innerHTML = 'La somma del peso delle zucchine è: ' + sum;
+const output1 = document.getElementById('output-1').innerHTML = `
+<h1>La somma del peso delle zucchine è: ${sum}gr</h1>
+`
 })
 
 
@@ -190,9 +192,69 @@ const output2 = document.getElementById('output-2').innerHTML =
 Jsnack 3
 Scrivi una funzione che accetti una stringa come argomento e la ritorni girata (es. Ciao -> oaiC)
 */
+const jsnack3 = document.getElementById('jsnack3').addEventListener('click', function(){
 
-const word = prompt('inserisci una parola');
+  document.getElementById('button-jsnack3').innerHTML = '';
 
-const reverseWord = (str) => str.split('').reverse().join('');  
+  const word = prompt('inserisci una parola');
+  const reverseWord = (str) => str.split('').reverse().join('');  
+  console.log(reverseWord(word));
+  const output3 = document.getElementById('output-3').innerHTML = `<h1>La stringa girata è ${reverseWord(word)}</h1>`;
 
-console.log(reverseWord(word));
+})
+
+
+
+
+
+/* 
+Jsnack 4
+Crea un array di oggetti, in cui ogni oggetto descrive una bici da corsa con le seguenti proprietà: nome e peso.
+Stampa a schermo la bici con peso minore utilizzando destructuring e template literal1 */
+
+document.getElementById('jsnack4').addEventListener('click', function(){
+
+  document.getElementById('button-jsnack4').innerHTML = '';
+  const biciArray = 
+[
+  {
+    nome: 'ciclocross',
+    kg: 34
+  },
+  {
+    nome: 'Ebike',
+    kg: 21
+  },
+  {
+    nome: 'gravel',
+    kg: 10
+  },
+  {
+    nome: 'scatto fisso',
+    kg: 9
+  }
+]
+
+let peso = biciArray[0].kg;
+
+let biciLeggera = {};
+
+for(let bici of biciArray){
+  const {kg} = bici;
+
+  if(peso > kg){
+    peso = kg;
+    biciLeggera = bici;
+  }
+}
+
+printBike(biciLeggera);
+
+function printBike(biciLeggera){
+  const {nome, peso} = biciLeggera;
+  const output4 = document.getElementById('output-3').innerHTML = 
+  `
+    <h1>La bici che pesa meno è: ${nome}</h1>
+  `
+}
+})
