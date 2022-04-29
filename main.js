@@ -248,13 +248,15 @@ for(let bici of biciArray){
   }
 }
 
+
 printBike(biciLeggera);
 
 function printBike(biciLeggera){
-  const {nome, peso} = biciLeggera;
+  console.log(biciLeggera);
+  const {nome, kg} = biciLeggera;
   const output4 = document.getElementById('output-3').innerHTML = 
   `
-    <h1>La bici che pesa meno è: ${nome}</h1>
+    <h1>La bici che pesa meno è: ${nome} e pesa ${kg}</h1>
   `
 }
 })
